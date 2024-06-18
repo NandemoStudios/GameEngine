@@ -10,7 +10,7 @@ while game.running:
 
     game.flip()
 
-    game.draw.draw_circle("red", 450, 300, 20)
+    game.draw.draw_circle("red", 450, 300, 25)
 
     game.tick()
 
