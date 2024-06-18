@@ -1,5 +1,6 @@
 import pygame
 
+
 class draw:
     def __init__(self, screen):
         self.screen = screen
