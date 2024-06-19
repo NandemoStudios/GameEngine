@@ -20,9 +20,14 @@ class Engine():
         pygame.display.flip()
         self.Clock.tick(60)
 
-    def newActor(self, startx, starty, color, radius):
-        new_Actor = actors.Actor(self, startx, starty, radius, color)
+    def newActor(self, color, **kwargs):
+        if "shape" in kwargs:
+            shape = kwargs.get("shape")
+        else:
+            shape = "circle"
+        new_Actor = actors.Actor(self, color, shape)
         self.Actors.append(new_Actor)
+        return new_Actor
 
     def renderActors(self):
         if len(self.Actors) > 0:

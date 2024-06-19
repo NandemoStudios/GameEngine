@@ -3,7 +3,11 @@ import pygame
 
 game = engine.Engine()
 
-testCircle = game.newActor(450, 300, "red", 20)
+testCircle = game.newActor("red")
+testSquare = game.newActor("blue", shape="rectangle")
+
+testCircle.setActorSize(x1=450, y1=300, radius=20)
+testSquare.setActorSize(x1=225.0, y1=150.0, height=20.0, width=20.0)
 
 while game.running:
     for event in pygame.event.get():
@@ -12,7 +16,6 @@ while game.running:
 
     game.flip()
 
-    #game.draw.draw_circle("red", 450, 300, 25)
     game.renderActors()
 
     game.tick()
