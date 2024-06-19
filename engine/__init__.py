@@ -1,7 +1,8 @@
 import pygame
 import engine.graphics as graphics
 import engine.actors as actors
-
+import keyboard
+import engine.input as Input
 
 class Engine():
     def __init__(self):
@@ -11,6 +12,7 @@ class Engine():
         self.backgroundColor = 'White'
         self.draw = graphics.draw(self.screen)
         self.actors = actors
+        self.Input = Input
         self.Actors = []
 
     def flip(self):

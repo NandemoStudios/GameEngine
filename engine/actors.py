@@ -46,3 +46,8 @@ class Actor:
         elif self.shape == 'rectangle':
             if hasattr(self, 'height'):
                 self.parent.draw.draw_rect(self.color, self.x1, self.y1, self.width, self.height, 1)
+
+
+    def MoveActor(self,x, y):
+        self.x1 = x
+        self.y1 = y
