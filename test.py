@@ -3,6 +3,8 @@ import pygame
 
 game = engine.Engine()
 
+game.data.LoadData('./saveData.txt')
+
 x_pos = 255
 y_pos = 150
 
@@ -41,5 +43,7 @@ while game.running:
     testSquare.MoveActor(x_pos, y_pos)
 
     game.tick()
-
+game.data.AddSaveData(x_pos)
+game.data.AddSaveData(y_pos)
+game.data.SaveData()
 pygame.quit()

@@ -1,10 +1,14 @@
+# Importing main library that will be used
 import pygame
+
+# Importing other elements of the game engine
 import engine.graphics as graphics
 import engine.actors as actors
-import keyboard
 import engine.input as Input
+import engine.data as data
 
-class Engine():
+
+class Engine:
     def __init__(self):
         self.screen = pygame.display.set_mode((900, 600))
         self.Clock = pygame.time.Clock()
@@ -13,6 +17,7 @@ class Engine():
         self.draw = graphics.draw(self.screen)
         self.actors = actors
         self.Input = Input
+        self.data = data.Data
         self.Actors = []
 
     def flip(self):
