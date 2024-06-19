@@ -17,7 +17,7 @@ class Engine:
         self.draw = graphics.draw(self.screen)
         self.actors = actors
         self.Input = Input
-        self.data = data.Data
+        self.data = data
         self.Actors = []
 
     def flip(self):

@@ -3,10 +3,16 @@ import pygame
 
 game = engine.Engine()
 
-game.data.LoadData('./saveData.txt')
+dataSave = game.data.Data('GameData.txt')
+LoadData = dataSave.LoadData()
 
 x_pos = 255
 y_pos = 150
+
+print(LoadData)
+
+x_pos = int(LoadData[0])
+y_pos = int(LoadData[1])
 
 # Makes two actors and sets the colours of them
 # The first is a circle, which is red, don't have to set it to a circle
@@ -43,7 +49,7 @@ while game.running:
     testSquare.MoveActor(x_pos, y_pos)
 
     game.tick()
-game.data.AddSaveData(x_pos)
-game.data.AddSaveData(y_pos)
-game.data.SaveData()
+dataSave.AddSaveData(x_pos)
+dataSave.AddSaveData(y_pos)
+dataSave.SaveData()
 pygame.quit()
