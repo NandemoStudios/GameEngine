@@ -5,14 +5,14 @@ game = engine.Engine()
 
 dataSave = game.data.Data('GameData.txt')
 LoadData = dataSave.LoadData()
-
-x_pos = 255
-y_pos = 150
+if not LoadData:
+    x_pos = int(LoadData[0])
+    y_pos = int(LoadData[1])
+else:
+    x_pos = 450
+    y_pos = 300
 
 print(LoadData)
-
-x_pos = int(LoadData[0])
-y_pos = int(LoadData[1])
 
 # Makes two actors and sets the colours of them
 # The first is a circle, which is red, don't have to set it to a circle

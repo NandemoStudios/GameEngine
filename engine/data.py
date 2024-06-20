@@ -7,6 +7,10 @@ class Data:
         self.fileLocation = fileLocation
         self.DataToSave = []
         self.ReadData = []
+        
+        open(self.fileLocation, 'w+')
+        
+
 
     def AddSaveData(self, data):
         self.DataToSave.append(data)
@@ -20,6 +24,10 @@ class Data:
 
     def LoadData(self):
         saveFile = open(self.fileLocation, 'r')
-        for item in saveFile.readlines():
-            self.ReadData.append(item)
+        print(os.stat(self.fileLocation))
+        if not os.stat(self.fileLocation) == 0:
+            for item in saveFile.readlines():
+                self.ReadData.append(item)
+        else:
+            return False
         return self.ReadData
